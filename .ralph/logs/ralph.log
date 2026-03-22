@@ -1,0 +1,13 @@
+[2026-03-22 23:07:01] [INFO] Setting up tmux session: ralph-1774192021
+[2026-03-22 23:07:01] [SUCCESS] 🚀 Ralph loop starting with Claude Code
+[2026-03-22 23:07:01] [INFO] Max calls per hour: 100
+[2026-03-22 23:07:01] [INFO] Logs: .ralph/logs/ | Docs: .ralph/docs/generated/ | Status: .ralph/status.json
+[2026-03-22 23:07:01] [SUCCESS] Tmux session created with 3 panes:
+[2026-03-22 23:07:01] [ERROR] Ralph integrity check failed - critical files missing
+[2026-03-22 23:07:01] [INFO]   Left:         Ralph loop
+[2026-03-22 23:07:01] [INFO]   Right-top:    Claude Code live output
+[2026-03-22 23:07:01] [INFO]   Right-bottom: Status monitor
+[2026-03-22 23:07:01] [INFO] 
+[2026-03-22 23:07:01] [INFO] Use Ctrl+B then D to detach from session
+[2026-03-22 23:07:01] [INFO] Use 'tmux attach -t ralph-1774192021' to reattach
+[2026-03-22 23:07:01] [INFO] Could not switch client. Session running detached: ralph-1774192021
