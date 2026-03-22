@@ -1,5 +1,14 @@
 import Link from "next/link";
 import { Wine } from "@/data/wines";
+import ProductBottle from "./ProductBottle";
+import type { ProductBottleVariant } from "./ProductBottle";
+
+const typeToBottle: Record<Wine["type"], ProductBottleVariant> = {
+  red: "lambrusco",
+  white: "pinot",
+  rosé: "rose",
+  sparkling: "prosecco",
+};
 
 const typeColors: Record<Wine["type"], string> = {
   red: "bg-wine/10 text-wine",
@@ -8,26 +17,15 @@ const typeColors: Record<Wine["type"], string> = {
   sparkling: "bg-olive/10 text-olive",
 };
 
-const typeEmoji: Record<Wine["type"], string> = {
-  red: "🍷",
-  white: "🥂",
-  rosé: "🌸",
-  sparkling: "✨",
-};
-
 export default function WineCard({ wine }: { wine: Wine }) {
   return (
     <Link href={`/wine/${wine.slug}`} className="group">
       <div className="bg-cream-light rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
-        {/* Image placeholder */}
-        <div className="aspect-[3/4] bg-gradient-to-br from-earth-light/30 to-cream relative overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-6xl opacity-40">{typeEmoji[wine.type]}</span>
-          </div>
+        {/* CSS Bottle */}
+        <div className="aspect-[3/4] bg-gradient-to-br from-earth-light/30 to-cream relative overflow-hidden flex items-end justify-center pb-6">
+          <ProductBottle variant={typeToBottle[wine.type]} />
           <div className="absolute top-4 left-4">
-            <span
-              className={`inline-block px-3 py-1 rounded-full text-xs font-medium capitalize ${typeColors[wine.type]}`}
-            >
+            <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium capitalize ${typeColors[wine.type]}`}>
               {wine.type}
             </span>
           </div>
@@ -45,9 +43,7 @@ export default function WineCard({ wine }: { wine: Wine }) {
             {wine.varietal} &middot; {wine.year}
           </p>
           <div className="flex items-center justify-between">
-            <span className="text-lg font-semibold text-wine">
-              ${wine.price}
-            </span>
+            <span className="text-lg font-semibold text-wine">${wine.price}</span>
             <span className="text-xs font-medium text-earth-mid group-hover:text-wine transition-colors">
               View Details &rarr;
             </span>

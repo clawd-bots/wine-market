@@ -1,210 +1,276 @@
-"use client";
-
-import Link from "next/link";
-import WineCard from "@/components/WineCard";
-import { wines } from "@/data/wines";
-
-const featured = wines.slice(0, 4);
-
-const testimonials = [
-  {
-    quote:
-      "The curation is impeccable. Every bottle I've ordered has been a revelation.",
-    author: "Marie L.",
-    location: "Paris",
-  },
-  {
-    quote:
-      "Finally, a wine shop that feels personal. The tasting notes are spot-on.",
-    author: "James K.",
-    location: "London",
-  },
-  {
-    quote:
-      "Their selection of rosés is unmatched. Summer wouldn't be the same without them.",
-    author: "Sofia R.",
-    location: "Barcelona",
-  },
-];
+import WineBottle from "@/components/WineBottle";
+import ProductBottle from "@/components/ProductBottle";
+import CollectionBottle from "@/components/CollectionBottle";
+import MiniBottle from "@/components/MiniBottle";
+import WineGlass from "@/components/WineGlass";
 
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-wine)_0%,_transparent_50%)] opacity-5" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+      {/* ===== Hero ===== */}
+      <section className="bg-cream-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block px-4 py-1.5 rounded-full bg-wine/10 text-wine text-xs font-medium mb-6">
-                Curated wines from world-class regions
+              <div className="text-xs font-medium tracking-[.14em] uppercase text-earth-mid mb-4">
+                Easy to Shop &middot; Beautiful to Gift
               </div>
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-dark leading-[1.1] mb-6">
-                Discover wines
-                <br />
-                worth <span className="text-wine">savoring</span>
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-[72px] font-bold text-dark leading-[.95] mb-6">
+                Beautiful bottles for every table.
               </h1>
-              <p className="text-lg text-earth leading-relaxed mb-8 max-w-lg">
-                From the rolling hills of Tuscany to the sun-drenched vineyards
-                of Napa Valley, we bring you an exceptional collection of wines
-                chosen for their character and craft.
+              <p className="text-base leading-relaxed text-earth mb-8 max-w-lg">
+                A cleaner, easier way to shop wine for dinners, gifting,
+                celebrations, and everyday moments — with a curated selection
+                that still feels welcoming and simple to browse.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/shop"
-                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gradient-to-r from-wine to-wine-bright text-cream-light font-medium text-sm hover:shadow-lg hover:shadow-wine/20 transition-all"
-                >
-                  Explore Collection
-                </Link>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border-2 border-earth-light text-earth font-medium text-sm hover:border-wine hover:text-wine transition-colors"
-                >
-                  Our Story
-                </Link>
+              <div className="flex gap-4">
+                <div className="px-7 py-3 rounded-full bg-gradient-to-r from-wine to-wine-bright text-cream-light font-medium text-sm cursor-pointer hover:shadow-lg hover:shadow-wine/20 transition-all">
+                  Shop Wines
+                </div>
+                <div className="px-7 py-3 rounded-full border-2 border-earth-light text-earth font-medium text-sm cursor-pointer hover:border-wine hover:text-wine transition-colors">
+                  Browse Collections
+                </div>
               </div>
             </div>
 
-            {/* Hero visual */}
+            {/* Hero Visual — 3 CSS bottles */}
             <div className="hidden md:flex justify-center">
-              <div className="relative">
-                <div className="w-80 h-96 rounded-[2rem] bg-gradient-to-br from-wine/10 to-earth-light/30 flex items-center justify-center shadow-2xl shadow-wine/5">
-                  <div className="text-center">
-                    <div className="relative w-24 h-24 mx-auto mb-4">
-                      <span className="absolute font-serif font-bold text-wine text-7xl opacity-60" style={{ left: 0 }}>T</span>
-                      <span className="absolute font-serif font-bold text-wine-mid text-7xl opacity-70" style={{ left: 18 }}>W</span>
-                      <span className="absolute font-serif font-bold text-wine-bright text-7xl opacity-80" style={{ left: 42 }}>M</span>
-                    </div>
-                    <p className="font-serif text-2xl font-semibold text-dark">The Wine Market</p>
-                    <p className="text-sm text-earth mt-1">Est. 2019</p>
+              <div className="bottle-panel">
+                <div className="bottle-grid">
+                  <div className="bottle-card">
+                    <WineBottle variant="dark" />
+                    <div className="bottle-name">Reserve</div>
+                  </div>
+                  <div className="bottle-card">
+                    <WineBottle variant="green" />
+                    <div className="bottle-name">Blanc</div>
+                  </div>
+                  <div className="bottle-card">
+                    <WineBottle variant="red" />
+                    <div className="bottle-name">Rouge</div>
                   </div>
                 </div>
-                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-olive/10 -z-10" />
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-wine/5 -z-10" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Wines */}
-      <section className="bg-cream-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-dark mb-3">
-              Featured Selections
-            </h2>
-            <p className="text-earth max-w-lg mx-auto">
-              Hand-picked wines that define excellence in their region and style.
-            </p>
+      {/* ===== Sparkling Section ===== */}
+      <section className="sparkling-section">
+        <div className="max-w-7xl mx-auto">
+          <div className="section-head">
+            <h2 className="section-title">Sparkling</h2>
+            <span className="section-sub">New arrivals</span>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featured.map((wine) => (
-              <WineCard key={wine.slug} wine={wine} />
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/shop"
-              className="inline-flex items-center gap-2 text-wine font-medium hover:text-wine-bright transition-colors"
-            >
-              View all wines <span>&rarr;</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* About Teaser */}
-      <section>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="rounded-[2rem] bg-gradient-to-br from-earth-light/40 to-cream-light aspect-square flex items-center justify-center">
-              <div className="text-center p-8">
-                <span className="text-8xl mb-4 block">🍇</span>
-                <p className="font-serif text-xl text-earth italic">
-                  From vineyard to your glass
-                </p>
+          <div className="sparkling-grid">
+            <div className="sparkling-card">
+              <div className="product-stage">
+                <ProductBottle variant="moscato" />
               </div>
+              <div className="sparkling-name">Moscato d&apos;Asti<br />Villa Jolanda</div>
+              <div className="sparkling-meta">$14 &middot; Piedmont</div>
             </div>
-            <div>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-dark mb-4">
-                Wine, curated with care
-              </h2>
-              <p className="text-earth leading-relaxed mb-4">
-                We believe great wine tells a story — of place, of people, of
-                tradition. Every bottle in our collection has been tasted,
-                discussed, and chosen with intention.
-              </p>
-              <p className="text-earth leading-relaxed mb-6">
-                From first-growth Bordeaux to small-batch natural wines, our
-                range spans the full spectrum of what the wine world has to
-                offer.
-              </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 text-wine font-medium hover:text-wine-bright transition-colors"
-              >
-                Learn more about us <span>&rarr;</span>
-              </Link>
+            <div className="sparkling-card">
+              <div className="product-stage">
+                <ProductBottle variant="prosecco" />
+              </div>
+              <div className="sparkling-name">Prosecco Superiore<br />Col Vetoraz</div>
+              <div className="sparkling-meta">$18 &middot; Veneto</div>
+            </div>
+            <div className="sparkling-card">
+              <div className="product-stage">
+                <ProductBottle variant="rose" />
+              </div>
+              <div className="sparkling-name">Sparkling Rosé<br />Domaine Chandon</div>
+              <div className="sparkling-meta">$22 &middot; Napa Valley</div>
+            </div>
+            <div className="sparkling-card">
+              <div className="product-stage">
+                <ProductBottle variant="lambrusco" />
+              </div>
+              <div className="sparkling-name">Lambrusco di Sorbara<br />Cleto Chiarli</div>
+              <div className="sparkling-meta">$16 &middot; Emilia-Romagna</div>
+            </div>
+            <div className="sparkling-card">
+              <div className="product-stage">
+                <ProductBottle variant="spumante" />
+              </div>
+              <div className="sparkling-name">Spumante Brut<br />Berlucchi &apos;61</div>
+              <div className="sparkling-meta">$24 &middot; Lombardy</div>
+            </div>
+            <div className="sparkling-card">
+              <div className="product-stage">
+                <ProductBottle variant="pinot" />
+              </div>
+              <div className="sparkling-name">Pinot Grigio Spumante<br />Santa Margherita</div>
+              <div className="sparkling-meta">$20 &middot; Alto Adige</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-cream-light text-center mb-12">
-            What our customers say
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t) => (
-              <div
-                key={t.author}
-                className="bg-cream-light/5 rounded-3xl p-8 border border-cream-light/10"
-              >
-                <p className="text-cream-light/80 leading-relaxed mb-6 italic">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div>
-                  <p className="text-cream-light font-medium text-sm">
-                    {t.author}
-                  </p>
-                  <p className="text-cream-light/40 text-xs">{t.location}</p>
+      {/* ===== Carousel Section ===== */}
+      <section className="carousel-section">
+        <div className="max-w-7xl mx-auto">
+          <div className="carousel-wrap">
+            {/* Main card */}
+            <div className="carousel-main">
+              <div className="carousel-overlay">
+                <div className="carousel-label">
+                  <div className="carousel-kicker">Staff Pick</div>
+                  <div className="carousel-title">Sunday Supper Wines</div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Side cards */}
+            <div className="carousel-side">
+              <div className="carousel-card soft-rose" style={{ padding: "22px" }}>
+                <div className="mini-title">Rosé Season</div>
+                <div className="mini-copy">Light, crisp bottles perfect for warm evenings.</div>
+                <div className="mini-visual">
+                  <MiniBottle variant="rose" />
+                  <MiniBottle variant="white" />
+                </div>
+              </div>
+              <div className="carousel-card soft-gold" style={{ padding: "22px" }}>
+                <div className="mini-title">Gift Bundles</div>
+                <div className="mini-copy">Curated sets ready to wrap and send.</div>
+                <div className="mini-visual">
+                  <MiniBottle variant="green" />
+                  <MiniBottle variant="white" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Newsletter */}
+      {/* ===== Collection Section ===== */}
+      <section className="sparkling-collection">
+        <div className="max-w-7xl mx-auto">
+          <div className="section-head">
+            <h2 className="section-title">The Collection</h2>
+            <span className="section-sub">Curated picks</span>
+          </div>
+          <div className="collection-grid">
+            <div className="collection-card">
+              <div className="collection-stage">
+                <CollectionBottle variant="c-moscato" />
+              </div>
+              <div className="collection-name">Golden Moscato<br />Sweet &amp; Light</div>
+              <div className="collection-meta">$14 &middot; Piedmont</div>
+            </div>
+            <div className="collection-card">
+              <div className="collection-stage">
+                <CollectionBottle variant="c-prosecco" />
+              </div>
+              <div className="collection-name">Prosecco Brut<br />Col Vetoraz</div>
+              <div className="collection-meta">$18 &middot; Veneto</div>
+            </div>
+            <div className="collection-card">
+              <div className="collection-stage">
+                <CollectionBottle variant="c-rose" />
+              </div>
+              <div className="collection-name">Provence Rosé<br />Château Miraval</div>
+              <div className="collection-meta">$26 &middot; Provence</div>
+            </div>
+            <div className="collection-card">
+              <div className="collection-stage">
+                <CollectionBottle variant="c-lambrusco" />
+              </div>
+              <div className="collection-name">Lambrusco Grasparossa<br />Villa di Corlo</div>
+              <div className="collection-meta">$16 &middot; Emilia-Romagna</div>
+            </div>
+            <div className="collection-card">
+              <div className="collection-stage">
+                <CollectionBottle variant="c-spumante" />
+              </div>
+              <div className="collection-name">Trento DOC Brut<br />Ferrari</div>
+              <div className="collection-meta">$28 &middot; Trentino</div>
+            </div>
+            <div className="collection-card">
+              <div className="collection-stage">
+                <CollectionBottle variant="c-pinot" />
+              </div>
+              <div className="collection-name">Pinot Grigio<br />Livio Felluga</div>
+              <div className="collection-meta">$22 &middot; Friuli</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Glassware Section ===== */}
+      <section className="glassware-section">
+        <div className="max-w-7xl mx-auto">
+          <div className="section-head">
+            <h2 className="section-title">Glassware</h2>
+            <span className="section-sub">Complete the experience</span>
+          </div>
+          <div className="glassware-grid">
+            <div className="glass-card">
+              <div className="glass-stage">
+                <WineGlass variant="default" />
+                <WineGlass variant="default" />
+              </div>
+              <div className="glass-title">Universal</div>
+              <div className="glass-copy">
+                An all-purpose glass with a balanced bowl, perfect for reds and
+                whites alike.
+              </div>
+            </div>
+            <div className="glass-card">
+              <div className="glass-stage">
+                <WineGlass variant="wide" />
+                <WineGlass variant="wide" />
+              </div>
+              <div className="glass-title">Burgundy</div>
+              <div className="glass-copy">
+                Wide bowl designed for aromatic wines — Pinot Noir, Nebbiolo, and
+                aged Burgundy.
+              </div>
+            </div>
+            <div className="glass-card">
+              <div className="glass-stage">
+                <WineGlass variant="tall" />
+                <WineGlass variant="medium" />
+              </div>
+              <div className="glass-title">Champagne</div>
+              <div className="glass-copy">
+                Tall, narrow flute to preserve bubbles and concentrate aromas in
+                sparkling wines.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Features Section ===== */}
       <section>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="bg-gradient-to-br from-wine to-wine-bright rounded-[2rem] p-10 md:p-16 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-cream-light mb-3">
-              Join the cellar
-            </h2>
-            <p className="text-cream-light/80 mb-8 max-w-md mx-auto">
-              Subscribe for first access to new arrivals, exclusive offers, and
-              curated tasting notes.
-            </p>
-            <form
-              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-5 py-3 rounded-full bg-cream-light/20 border border-cream-light/30 text-cream-light placeholder:text-cream-light/50 text-sm focus:outline-none focus:border-cream-light"
-              />
-              <button
-                type="submit"
-                className="px-8 py-3 rounded-full bg-cream-light text-wine font-medium text-sm hover:bg-cream transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+        <div className="max-w-7xl mx-auto">
+          <div className="features">
+            <div className="feature">
+              <div className="feature-title">Free Shipping</div>
+              <div className="feature-text">
+                Complimentary delivery on every order over $75, carefully packed
+                and fully insured.
+              </div>
+            </div>
+            <div className="feature">
+              <div className="feature-title">Expert Picks</div>
+              <div className="feature-text">
+                Every bottle is tasted and selected by our team of certified
+                sommeliers.
+              </div>
+            </div>
+            <div className="feature">
+              <div className="feature-title">Easy Returns</div>
+              <div className="feature-text">
+                Not happy? Return any unopened bottle within 30 days — no
+                questions asked.
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -24,3 +24,205 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* ===== TWM Monogram ===== */
+.twm-overlap { position: relative; display: inline-flex; }
+.twm-overlap .t,
+.twm-overlap .w,
+.twm-overlap .m {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1;
+}
+.twm-overlap .t { color: #7a1f2a; position: relative; z-index: 3; }
+.twm-overlap .w { color: #b73447; position: relative; margin-left: -10px; z-index: 2; }
+.twm-overlap .m { color: #c63a4b; position: relative; margin-left: -10px; z-index: 1; }
+
+/* ===== Hero Bottles ===== */
+.hero-bottle { margin: 0 auto 10px; position: relative; }
+.hero-bottle .neck { position: absolute; left: 50%; transform: translateX(-50%); top: -20px; border-radius: 4px 4px 0 0; }
+.hero-bottle.dark { width: 54px; height: 182px; background: linear-gradient(180deg, #2d2825 0%, #181412 100%); border-radius: 14px 14px 10px 10px; box-shadow: 0 12px 24px rgba(0,0,0,.12); }
+.hero-bottle.dark .neck { width: 16px; height: 26px; background: #231f1d; }
+.hero-bottle.green { width: 60px; height: 212px; background: linear-gradient(180deg, #7e8c5f 0%, #5c6d3f 100%); border-radius: 16px 16px 11px 11px; box-shadow: 0 12px 24px rgba(0,0,0,.12); }
+.hero-bottle.green .neck { width: 18px; height: 30px; background: #5c6d3f; }
+.hero-bottle.red { width: 56px; height: 194px; background: linear-gradient(180deg, #6b2231 0%, #45131d 100%); border-radius: 14px 14px 10px 10px; box-shadow: 0 12px 24px rgba(0,0,0,.12); }
+.hero-bottle.red .neck { width: 16px; height: 26px; background: #45131d; }
+
+/* ===== Hero Visual ===== */
+.hero-visual { position: relative; }
+.hero-visual::before { content: ''; position: absolute; inset: 20px; border-radius: 28px; border: 1px solid rgba(255,255,255,.35); }
+.bottle-panel { width: 100%; max-width: 430px; background: linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.45)); border: 1px solid rgba(255,255,255,.6); border-radius: 30px; padding: 26px; box-shadow: 0 20px 50px rgba(31,27,24,.10); }
+.bottle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: end; }
+.bottle-card { text-align: center; }
+.bottle-name { font-size: 13px; color: #4c4139; margin-top: 10px; }
+
+/* ===== Product Bottles (sparkling section) ===== */
+.product-bottle { position: relative; filter: drop-shadow(0 14px 24px rgba(31,27,24,.12)); }
+.product-bottle .neck { position: absolute; left: 50%; transform: translateX(-50%); top: -22px; border-radius: 4px 4px 0 0; }
+.product-bottle .foil { position: absolute; left: 50%; transform: translateX(-50%); top: -30px; border-radius: 4px 4px 0 0; }
+.product-bottle .label { position: absolute; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,.85); border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,.05); }
+.product-bottle .band { position: absolute; left: 50%; transform: translateX(-50%); height: 10px; border-radius: 999px; }
+
+.product-bottle.moscato { width: 58px; height: 188px; background: linear-gradient(180deg, #d8b56c 0%, #bf9a4b 100%); border-radius: 16px 16px 10px 10px; }
+.product-bottle.moscato .neck { width: 16px; height: 26px; background: #bf9a4b; }
+.product-bottle.moscato .foil { width: 18px; height: 10px; background: #f3e7c2; }
+.product-bottle.moscato .label { top: 58px; width: 32px; height: 74px; }
+.product-bottle.moscato .band { top: 72px; width: 22px; background: #e9d39c; }
+
+.product-bottle.prosecco { width: 60px; height: 204px; background: linear-gradient(180deg, #7f9661 0%, #627b46 100%); border-radius: 18px 18px 10px 10px; }
+.product-bottle.prosecco .neck { width: 16px; height: 28px; background: #627b46; }
+.product-bottle.prosecco .foil { width: 18px; height: 11px; background: #d6cfaa; }
+.product-bottle.prosecco .label { top: 62px; width: 34px; height: 82px; }
+.product-bottle.prosecco .band { top: 76px; width: 24px; background: #d6cfaa; }
+
+.product-bottle.rose { width: 60px; height: 204px; background: linear-gradient(180deg, #d9adb1 0%, #b8828a 100%); border-radius: 18px 18px 10px 10px; }
+.product-bottle.rose .neck { width: 16px; height: 28px; background: #a77078; }
+.product-bottle.rose .foil { width: 18px; height: 11px; background: #ead6d8; }
+.product-bottle.rose .label { top: 62px; width: 34px; height: 82px; }
+.product-bottle.rose .band { top: 76px; width: 24px; background: #e8d0d4; }
+
+.product-bottle.lambrusco { width: 58px; height: 196px; background: linear-gradient(180deg, #5c1d29 0%, #2b0d13 100%); border-radius: 16px 16px 10px 10px; }
+.product-bottle.lambrusco .neck { width: 16px; height: 26px; background: #2b0d13; }
+.product-bottle.lambrusco .foil { width: 18px; height: 10px; background: #1d1d1d; }
+.product-bottle.lambrusco .label { top: 58px; width: 30px; height: 76px; background: rgba(255,255,255,.92); }
+.product-bottle.lambrusco .band { top: 74px; width: 20px; background: #111; }
+
+.product-bottle.spumante { width: 56px; height: 194px; background: linear-gradient(180deg, #3f3f3f 0%, #1d1d1d 100%); border-radius: 16px 16px 10px 10px; }
+.product-bottle.spumante .neck { width: 16px; height: 26px; background: #1d1d1d; }
+.product-bottle.spumante .foil { width: 18px; height: 10px; background: #cfcfcf; }
+.product-bottle.spumante .label { top: 60px; width: 30px; height: 76px; background: rgba(255,255,255,.92); }
+.product-bottle.spumante .band { top: 74px; width: 20px; background: #d2b46c; }
+
+.product-bottle.pinot { width: 58px; height: 198px; background: linear-gradient(180deg, #d7cfb2 0%, #bfb58e 100%); border-radius: 16px 16px 10px 10px; }
+.product-bottle.pinot .neck { width: 16px; height: 27px; background: #bfb58e; }
+.product-bottle.pinot .foil { width: 18px; height: 10px; background: #f0ead3; }
+.product-bottle.pinot .label { top: 58px; width: 32px; height: 78px; background: rgba(255,255,255,.9); }
+.product-bottle.pinot .band { top: 74px; width: 20px; background: #e4d9b2; }
+
+/* ===== Collection Bottles ===== */
+.collection-bottle { position: relative; filter: drop-shadow(0 14px 24px rgba(31,27,24,.12)); }
+.collection-bottle .neck { position: absolute; left: 50%; transform: translateX(-50%); top: -22px; border-radius: 4px 4px 0 0; }
+.collection-bottle .foil { position: absolute; left: 50%; transform: translateX(-50%); top: -30px; border-radius: 4px 4px 0 0; }
+.collection-bottle .label { position: absolute; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,.88); border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,.05); }
+.collection-bottle .band { position: absolute; left: 50%; transform: translateX(-50%); height: 10px; border-radius: 999px; }
+
+.collection-bottle.c-moscato { width: 58px; height: 188px; background: linear-gradient(180deg, #d8b56c 0%, #bf9a4b 100%); border-radius: 16px 16px 10px 10px; }
+.collection-bottle.c-moscato .neck { width: 16px; height: 26px; background: #bf9a4b; }
+.collection-bottle.c-moscato .foil { width: 18px; height: 10px; background: #f3e7c2; }
+.collection-bottle.c-moscato .label { top: 58px; width: 32px; height: 74px; }
+.collection-bottle.c-moscato .band { top: 72px; width: 22px; background: #e9d39c; }
+
+.collection-bottle.c-prosecco { width: 60px; height: 204px; background: linear-gradient(180deg, #7f9661 0%, #627b46 100%); border-radius: 18px 18px 10px 10px; }
+.collection-bottle.c-prosecco .neck { width: 16px; height: 28px; background: #627b46; }
+.collection-bottle.c-prosecco .foil { width: 18px; height: 11px; background: #d6cfaa; }
+.collection-bottle.c-prosecco .label { top: 62px; width: 34px; height: 82px; }
+.collection-bottle.c-prosecco .band { top: 76px; width: 24px; background: #d6cfaa; }
+
+.collection-bottle.c-rose { width: 60px; height: 204px; background: linear-gradient(180deg, #d9adb1 0%, #b8828a 100%); border-radius: 18px 18px 10px 10px; }
+.collection-bottle.c-rose .neck { width: 16px; height: 28px; background: #a77078; }
+.collection-bottle.c-rose .foil { width: 18px; height: 11px; background: #ead6d8; }
+.collection-bottle.c-rose .label { top: 62px; width: 34px; height: 82px; }
+.collection-bottle.c-rose .band { top: 76px; width: 24px; background: #e8d0d4; }
+
+.collection-bottle.c-lambrusco { width: 58px; height: 196px; background: linear-gradient(180deg, #5c1d29 0%, #2b0d13 100%); border-radius: 16px 16px 10px 10px; }
+.collection-bottle.c-lambrusco .neck { width: 16px; height: 26px; background: #2b0d13; }
+.collection-bottle.c-lambrusco .foil { width: 18px; height: 10px; background: #1d1d1d; }
+.collection-bottle.c-lambrusco .label { top: 58px; width: 30px; height: 76px; background: rgba(255,255,255,.92); }
+.collection-bottle.c-lambrusco .band { top: 74px; width: 20px; background: #111; }
+
+.collection-bottle.c-spumante { width: 56px; height: 194px; background: linear-gradient(180deg, #3f3f3f 0%, #1d1d1d 100%); border-radius: 16px 16px 10px 10px; }
+.collection-bottle.c-spumante .neck { width: 16px; height: 26px; background: #1d1d1d; }
+.collection-bottle.c-spumante .foil { width: 18px; height: 10px; background: #cfcfcf; }
+.collection-bottle.c-spumante .label { top: 60px; width: 30px; height: 76px; background: rgba(255,255,255,.92); }
+.collection-bottle.c-spumante .band { top: 74px; width: 20px; background: #d2b46c; }
+
+.collection-bottle.c-pinot { width: 58px; height: 198px; background: linear-gradient(180deg, #d7cfb2 0%, #bfb58e 100%); border-radius: 16px 16px 10px 10px; }
+.collection-bottle.c-pinot .neck { width: 16px; height: 27px; background: #bfb58e; }
+.collection-bottle.c-pinot .foil { width: 18px; height: 10px; background: #f0ead3; }
+.collection-bottle.c-pinot .label { top: 58px; width: 32px; height: 78px; background: rgba(255,255,255,.9); }
+.collection-bottle.c-pinot .band { top: 74px; width: 20px; background: #e4d9b2; }
+
+/* ===== Mini Bottles (carousel) ===== */
+.mini-bottle { position: relative; border-radius: 14px 14px 8px 8px; box-shadow: 0 10px 18px rgba(31,27,24,.12); }
+.mini-bottle::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); top: -14px; width: 10px; height: 16px; border-radius: 4px 4px 0 0; background: inherit; }
+.mini-bottle.white { width: 26px; height: 92px; background: linear-gradient(180deg, #f7f2e8 0%, #e9d8b0 100%); }
+.mini-bottle.green { width: 28px; height: 102px; background: linear-gradient(180deg, #839a65 0%, #627b46 100%); }
+.mini-bottle.rose { width: 28px; height: 102px; background: linear-gradient(180deg, #d7adb0 0%, #b8828a 100%); }
+
+/* ===== Wine Glasses ===== */
+.glass { position: relative; width: 58px; height: 128px; }
+.glass .bowl { position: absolute; left: 50%; transform: translateX(-50%); top: 0; width: 54px; height: 56px; border: 1.2px solid rgba(255,255,255,.9); border-radius: 52% 52% 42% 42%; background: linear-gradient(180deg, rgba(255,255,255,.72) 0%, rgba(255,255,255,.28) 100%); box-shadow: inset -8px 0 14px rgba(255,255,255,.35), inset 8px 0 10px rgba(122,31,42,.04), 0 8px 18px rgba(31,27,24,.05); backdrop-filter: blur(2px); }
+.glass .stem { position: absolute; left: 50%; transform: translateX(-50%); top: 54px; width: 3px; height: 44px; background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(122,31,42,.12)); border-radius: 999px; }
+.glass .base { position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: 34px; height: 5px; background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(122,31,42,.12)); border-radius: 999px; box-shadow: 0 4px 8px rgba(31,27,24,.04); }
+.glass .shine { position: absolute; left: 18px; top: 10px; width: 8px; height: 28px; border-radius: 999px; background: rgba(255,255,255,.45); filter: blur(.2px); }
+.glass.wide .bowl { width: 62px; height: 48px; border-radius: 48% 48% 36% 36%; }
+.glass.tall .bowl { width: 46px; height: 64px; border-radius: 46% 46% 44% 44%; }
+.glass.medium .bowl { width: 52px; height: 58px; }
+
+/* ===== Section Styles ===== */
+.sparkling-section { padding: 28px 24px 34px; background: #fff; }
+.section-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0 0 18px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; color: #1f1b18; margin: 0; }
+.section-sub { font-size: 13px; color: #8b7765; letter-spacing: .12em; text-transform: uppercase; }
+.sparkling-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px 20px; }
+.sparkling-card { padding: 8px 8px 14px; background: transparent; }
+.product-stage { height: 248px; display: flex; align-items: flex-end; justify-content: center; }
+.sparkling-name { font-size: 14px; line-height: 1.45; color: #3d342d; min-height: 62px; margin-top: 10px; }
+.sparkling-meta { margin-top: 8px; font-size: 12px; color: #8b7765; letter-spacing: .08em; text-transform: uppercase; }
+
+/* ===== Carousel Section ===== */
+.carousel-section { padding: 28px 24px 8px; background: #fff; }
+.carousel-wrap { display: grid; grid-template-columns: 1.45fr .9fr; gap: 18px; }
+.carousel-main, .carousel-side { border-radius: 26px; overflow: hidden; position: relative; min-height: 320px; }
+.carousel-main { background: linear-gradient(180deg, #f7efe5 0%, #efe1d2 100%); }
+.carousel-side { display: grid; grid-template-rows: 1fr 1fr; gap: 18px; background: transparent; min-height: auto; }
+.carousel-card { border-radius: 24px; overflow: hidden; position: relative; min-height: 151px; background: linear-gradient(180deg, #f9f3ec 0%, #f1e6d8 100%); }
+.carousel-card.soft-rose { background: linear-gradient(180deg, #f8eff0 0%, #eed9dc 100%); }
+.carousel-card.soft-gold { background: linear-gradient(180deg, #f8f3e6 0%, #efe3c6 100%); }
+.carousel-overlay { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 22px; background: linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(31,27,24,.28) 100%); }
+.carousel-label { color: #fff; }
+.carousel-kicker { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; opacity: .9; margin-bottom: 6px; }
+.carousel-title { font-family: 'Cormorant Garamond', serif; font-size: 34px; line-height: .95; }
+.mini-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; line-height: 1; color: #1f1b18; }
+.mini-copy { margin-top: 6px; font-size: 13px; line-height: 1.5; color: #5c5047; max-width: 240px; }
+.mini-visual { position: absolute; right: 18px; bottom: 14px; display: flex; gap: 8px; align-items: flex-end; }
+
+/* ===== Collection / Glassware Sections ===== */
+.glassware-section { padding: 8px 24px 28px; background: #fff; }
+.sparkling-collection { padding: 8px 24px 28px; background: #fff; }
+.collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px 18px; }
+.collection-card { padding: 10px 8px 12px; background: transparent; }
+.collection-stage { height: 250px; display: flex; align-items: flex-end; justify-content: center; }
+.collection-name { font-size: 14px; line-height: 1.45; color: #3d342d; min-height: 62px; margin-top: 12px; }
+.collection-meta { margin-top: 8px; font-size: 12px; color: #8b7765; letter-spacing: .08em; text-transform: uppercase; }
+
+.glassware-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.glass-card { border: 1px solid rgba(31,27,24,.06); border-radius: 24px; padding: 22px 20px; background: linear-gradient(180deg, #fffdf9 0%, #f9f3ec 100%); position: relative; overflow: hidden; min-height: 280px; }
+.glass-card::after { content: ''; position: absolute; width: 90px; height: 90px; border-radius: 50%; right: -24px; top: -24px; background: linear-gradient(135deg, #7a1f2a14, #c89b5a18); }
+.glass-stage { height: 150px; display: flex; align-items: flex-end; justify-content: center; gap: 16px; margin-bottom: 20px; }
+.glass-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1; color: #1f1b18; margin-bottom: 10px; }
+.glass-copy { font-size: 14px; line-height: 1.6; color: #5c5047; }
+
+/* ===== Features Section ===== */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 22px 24px 28px; background: #fff; }
+.feature { position: relative; overflow: hidden; border: 1px solid rgba(31,27,24,.06); border-radius: 22px; padding: 18px; background: #fffdf9; }
+.feature-title { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #8b7765; margin-bottom: 8px; }
+.feature::after { content: ''; position: absolute; width: 60px; height: 60px; background: linear-gradient(135deg, #7a1f2a22, #c89b5a22); border-radius: 50%; top: -20px; right: -20px; }
+.feature-text { font-size: 15px; line-height: 1.55; color: #5c5047; }
+
+/* ===== Nav Row ===== */
+.nav-row { display: flex; gap: 24px; overflow-x: auto; padding: 8px 0; scrollbar-width: none; }
+.nav-row::-webkit-scrollbar { display: none; }
+.nav-row span { font-size: 13px; color: #6a5b4d; letter-spacing: .06em; white-space: nowrap; cursor: pointer; transition: color .2s; }
+.nav-row span:hover { color: #7a1f2a; }
+
+/* ===== Responsive ===== */
+@media (max-width: 920px) {
+  .sparkling-grid,
+  .collection-grid,
+  .glassware-grid,
+  .features { grid-template-columns: 1fr; }
+  .carousel-wrap { grid-template-columns: 1fr; }
+  .bottle-grid { grid-template-columns: repeat(3, 1fr); }
+}
